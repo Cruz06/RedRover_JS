@@ -1,0 +1,21 @@
+.box{
+    display: flex;
+    justify-content: space-between;
+    background-color:aqua;
+}
+.box1{
+    background-color: rgb(255, 0, 170);
+}
+.box2{
+    background-color: blanchedalmond;
+}
+.box3{
+    background-color: darkolivegreen;
+    text-decoration: blue;
+}
+.box4{
+    background-color: cadetblue;
+}
+span{
+    text-decoration-color: chocolate;
+}

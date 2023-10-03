@@ -1,0 +1,245 @@
+// Цикл for
+// for (начало; условие; шаг) {
+//     // ... тело цикла ...
+// }
+
+
+// Цикл while :
+// while (condition) {
+//     // код
+//     // также называемый "телом цикла"
+// }
+
+
+// Цикл do..while
+// do {
+//     // тело цикла
+// } while (condition);
+
+
+// ==================Difference between for, while, and do-while loops?
+// ● For loop: Iterates a set number of times. It has three parts:
+// initialization, condition, and increment/decrement.
+// ● While loop: Iterates as long as a specified condition is true. The
+// condition is evaluated before each iteration.
+// ● Do-while loop: Like the while loop but checks the condition after
+// the loop has executed, ensuring the loop is executed at least
+// once.
+
+
+// Код из тела цикла выполняется, пока условие condition истинно.
+// let i = 3
+// while (i) { // когда i будет равно 0, условие станет ложным, и цикл остановится
+//   console.log(i)
+//   i--
+// }
+
+
+// Решите задачу с помощью цикла:
+// «Улитка ползёт вверх по стене высотой 5 метров.
+// Каждый день она проползает вверх на 3 метра,
+// а каждую ночь съезжает вниз на 2 метра.
+// За сколько дней она доползёт до вершины стены.»
+
+
+
+
+// let dayDistance = 3
+// let nightDown = -2
+// let distance = 0
+// let days = 0
+// let wall = 5
+
+
+// do  {
+//     distance += dayDistance
+//     days++ // days = days + 1
+//     console.log(`Distance ${distance} in ${days} d`)
+//     if (distance == wall) {
+//         console.log(`Finish! It takes ${days} days`)
+//         break
+//     }
+//     distance += nightDown
+//  } while (distance <= wall)
+
+
+//=====================break and continue
+
+
+// const arr = [1, 4, 6, 13, 0, -45, 12]
+// const num = 13
+
+
+// for(let item of arr){
+//   if(item == num){
+//   break
+//   }
+//   else {
+//     console.log(item)
+//   }
+// }
+
+
+// const arrayNumbers = [5, 9, 10, 2, 31, 12, 1]
+// let odds = 0
+// for (let i = 0; i < arrayNumbers.length; i++) {
+//     if (arrayNumbers[i] % 2 == 0) {
+//         continue
+//     }
+//     odds++
+// }
+// console.log(odds);
+
+
+// ====================Difference between for..of and for..in loop?
+
+
+// ● For..in: Iterates over enumerable properties of an object,
+// typically used for objects.
+// ● For..of: Iterates over iterable objects (like arrays, strings,
+// etc.), introduced in ES6.
+
+
+// const range = [1, 5, 8, 0]
+// // let range = 'abcdefg'
+// // for (let num of range) {
+// //     console.log(num)
+// // }
+
+
+// for (let num in range) { //не используют для работы с массивами!
+//     console.log(num)
+// }
+
+
+// ==========Вопросы с интервью!!!
+// let count = 0
+// for(let i = 0; i < 5; i++) {
+//     count ++
+// }
+// console.log(i)  //=> ? ReferenceError: i is not defined
+
+
+
+
+// let count = 0
+// for(i = 0; i < 5; i++) {
+//     count ++
+// }
+// console.log(i)   //=> ? 5
+
+
+// const length = 4;
+// const numbers = [];
+// for (var i = 0; i < length; i++);{
+//   numbers.push(i + 1);
+// }
+// console.log(numbers); //=> ?? => [ 5 ]
+
+
+// ------------------------------------------------------------------
+// // Reverse a number
+// let num = 2583 //=> 3852
+// let result = 0
+
+
+// while (num) {
+//     let remNum = num % 10
+//     result = result * 10 + remNum
+//     // console.log(num / 10);
+//     num = Math.trunc(num / 10)
+//     // console.log(num);
+// }
+// console.log(result)
+
+
+Разбор дом.задания:
+
+
+// ========================
+// У вас есть массив с тремя видами скобок, предположим
+// [ '{', ')', '(', ')', ')', '}', '[', ']', ')'] .
+// Количество элементов и последовательность может быть разной.
+// Нужно выяснить, все ли скобки являются парными  в правильной последовательности
+//  (открывающая и затем закрывающая).
+// Также, скобки могут быть вложенными, но тем не менее,
+// если последовательность соблюдена, то они считаются парными.
+
+
+// let strArr = ['{',  '}', '(', ')',  '[', ']']  
+// // let strArr = ['{', '(', ')', '}', '[', ']']  
+// // let strArr = ['{',  '}']
+// // let strArr = ['{']
+// // let strArr = []
+// // let strArr = ['}',  '{']
+// // let strArr = ['{', '(', '}', '(', ')', ')', '[', ']']
+
+
+// let stck = []
+// let char = ''
+// if (strArr.length === 0 || strArr.length % 2 != 0) {
+//   console.log(false);
+// }
+// for (let i = 0; i < strArr.length; i++) {
+//   char = stck[stck.length - 1]
+ 
+//   if (strArr[i] == '(' || strArr[i] == '{' || strArr[i] == '[') {
+//     stck.push(strArr[i])
+//   } else if ((char == '(' && strArr[i] == ')') || (char == '{' && strArr[i] == '}') || (char == '[' && strArr[i] == ']')) {
+//     stck.pop()
+//   } else {
+//     console.log(false);
+//     break
+//   }
+// }
+
+
+// if (stck.length === 0 && char !== '' && char !== undefined) {
+//   console.log(true);
+// }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==========================Нарисуйте елочку
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+let h = 6
+let tree = ''
+
+
+for (let i = 1; i <= h; i++) {        //creates line of tree
+  let space = ''
+  for (let j = 1; j <= h - i; j++) {   //generate spaces
+    space += '.'
+  }
+  let stars = ''
+    for (let s = 1; s <= i * 2 - 1; s++) {
+      stars += '*'
+    }
+    tree += space + stars + '\n'
+}
+
+
+console.log(tree)
+
+
+
+
+
